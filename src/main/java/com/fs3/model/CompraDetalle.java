@@ -1,5 +1,7 @@
 package com.fs3.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +18,7 @@ public class CompraDetalle {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "compra_id")
+    @JsonBackReference
     private Compra compra;
 
     @ManyToOne(optional = false)

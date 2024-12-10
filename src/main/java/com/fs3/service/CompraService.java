@@ -7,4 +7,6 @@ import com.fs3.model.Compra;
 
 public interface CompraService {
     Compra crearCompra(Long usuarioId, List<CompraDetalleDTO> detallesDTO);
+    List<Compra> obtenerTodasLasCompras();
+    List<Compra> obtenerComprasPorUsuario(Long usuarioId);
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.fs3.dto.CompraDetalleDTO;
 import com.fs3.model.Compra;
@@ -15,6 +16,7 @@ import com.fs3.repository.CompraRepository;
 import com.fs3.repository.ProductoRepository;
 import com.fs3.repository.UsuarioRepository;
 
+@Service
 public class CompraServiceImpl implements CompraService{
     @Autowired
     private CompraRepository compraRepository;
@@ -38,7 +40,7 @@ public class CompraServiceImpl implements CompraService{
         // Procesar los detalles
         List<CompraDetalle> detalles = new ArrayList<>();
         double total = 0;
-
+        System.out.println("Llega hasta este punto");
         for (CompraDetalleDTO detalleDTO : detallesDTO) {
             Producto producto = productoRepository.findById(detalleDTO.getProductoId())
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
@@ -58,6 +60,16 @@ public class CompraServiceImpl implements CompraService{
 
         // Guardar compra y detalles
         return compraRepository.save(compra);
+    }
+
+    @Override
+    public List<Compra> obtenerTodasLasCompras() {
+        return compraRepository.findAll();
+    }
+
+    @Override
+    public List<Compra> obtenerComprasPorUsuario(Long usuarioId) {
+        return compraRepository.findByUsuarioId(usuarioId);
     }
     
 }

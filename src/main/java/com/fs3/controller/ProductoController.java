@@ -30,5 +30,10 @@ public class ProductoController {
         return productoService.getProductosByCategoria(categoria);
     }
 
+    @GetMapping("/nombre/{nombre}")
+    public List<Producto> getProductosByNombre(@PathVariable String nombre){
+        return productoService.filtrarProductos(nombre);
+    }
+
 
 }

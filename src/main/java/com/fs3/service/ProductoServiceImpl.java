@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
 
 import com.fs3.model.Producto;
 import com.fs3.repository.ProductoRepository;
 import com.fs3.specifications.ProductoSpecifications;
 
+@Service
 public class ProductoServiceImpl implements ProductoService{
 
     @Autowired
