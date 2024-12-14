@@ -18,7 +18,7 @@ import com.fs3.model.Compra;
 import com.fs3.service.CompraService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200") 
+@CrossOrigin(origins = "http://ip172-18-0-31-ctee5d291nsg00ftqsog-80.direct.labs.play-with-docker.com") 
 @RequestMapping("/compras")
 public class CompraController {
     @Autowired

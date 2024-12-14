@@ -23,6 +23,8 @@ EXPOSE 8083
 
 ENTRYPOINT [ "java", "-jar","/app/app.jar" ]
 
-#docker build --no-cache -t producto_back .
-#docker run -d --name producto_back -p 8083:8083 compraproducto_back
-#docker run -d --name producto_back -p 8083:8083 jorgsanchezm/compraproducto_back:v2
+
+#docker build --no-cache -t jorgsanchezm/compraproducto_back:latest .
+#docker run -d --name compraproducto_back -p 8083:8083 compraproducto_back
+#docker run -d --name compraproducto_back -p 8083:8083 jorgsanchezm/compraproducto_back:latest
+
